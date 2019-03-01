@@ -35,34 +35,15 @@ int m3[3][3] = {
   {0,0,0}
 };
 
-void *SomaVetor(void *arg)
-{
-  int *tID = (int *)arg;
-
-  printf("%d\n", *tID);
-
-  for(size_t i = 0; i < 8; i++)
-  {
-    c[i] = a[i] + b[i];
-  }
-
-  return NULL;
-}
-
 int main (int argc, char *argv[]) 
 {
-  pthread_t threadID;
-  pthread_create(&threadID, NULL, SomaVetor,(void *)threadID);
-  pthread_join(threadID, NULL);
-
-  /*printf("Inicio da soma de vetores\n");
+  printf("\n\nInicio da soma de vetores\n");
   #pragma omp parallel for
     for(size_t i = 0; i < 8; i++)
     {
       c[i] = a[i] + b[i];
       printf("%d - %d\n", c[i], omp_get_thread_num());
     }
-  
   printf("\n\nInicio da multiplicacao de matrizes\n");
 
     #pragma omp parallel for
@@ -87,6 +68,5 @@ int main (int argc, char *argv[])
         
           printf("\n");
       }
-      */
     
 }
